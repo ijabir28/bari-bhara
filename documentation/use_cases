@@ -1,0 +1,24 @@
+Types of user:
+    landlord
+    tenant
+
+Common User:
+    Registration.
+    Sign in.
+    Dashboard
+    View announcement.
+    Profile update (...Due/Credit).
+    Request to take apartment.
+    View rent.
+    Pay rent.
+
+House owner:
+    Dashboard
+    Register/Delete an apartment.
+    Check request list.
+    Accept/Reject request for tenant.
+    Remove tenant.
+    Update apartment information.
+    Upload utility bills.
+    Publish announcement.
+    Approve payment.
