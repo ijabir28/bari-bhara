@@ -26,6 +26,7 @@ function signin(req, res) {
         if (user === undefined || user.password !== req.body.password) {
             throw 'INVALID_CREDENTIAL';
         }
+        req.session.active = true;
         res.status(200).send();
     } catch (e) {
         console.log(e);
@@ -34,7 +35,17 @@ function signin(req, res) {
 }
 
 function dashboard(req, res) {
-    res.status(200).send();
+    try {
+        console.log(req.session.active);
+        if (req.session.active) {
+            return res.status(200).send();
+        }
+        res.status(401).send();
+    } catch (e) {
+        console.error(e);
+        res.status(500).send();
+    }
+
 }
 
 module.exports = {signup, signin, dashboard};
