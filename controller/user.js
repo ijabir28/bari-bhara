@@ -24,7 +24,7 @@ function signin(req, res) {
     try {
         const user = get_user({username: req.body.username});
         if (user === undefined || user.password !== req.body.password) {
-            throw 'INVALID_CREDENTIAL';
+            res.status(400).send();
         }
         req.session.active = true;
         res.status(200).send();
@@ -36,7 +36,6 @@ function signin(req, res) {
 
 function dashboard(req, res) {
     try {
-        console.log(req.session.active);
         if (req.session.active) {
             return res.status(200).send();
         }
