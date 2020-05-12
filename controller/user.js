@@ -33,4 +33,8 @@ function signin(req, res) {
     }
 }
 
-module.exports = {signup, signin};
+function dashboard(req, res) {
+    res.status(200).send();
+}
+
+module.exports = {signup, signin, dashboard};
